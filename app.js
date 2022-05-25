@@ -60,7 +60,28 @@ const promptProject = (portfolioData) => {
       {
         type: "input",
         name: "name",
-        message: "Provide a description of the project (Required)",
+        message: "What is the name of your project? (Required)",
+        validate: (nameInput) => {
+          if (nameInput) {
+            return true;
+          } else {
+            console.log("You need to enter a project name!");
+            return false;
+          }
+        },
+      },
+      {
+        type: 'input',
+        name: 'description',
+        message: 'Provide a description of the project (Required)',
+        validate: descriptionInput => {
+          if (descriptionInput) {
+            return true;
+          } else {
+            console.log("Please enter a description of your project!");
+            return false;
+          }
+        },
       },
       {
         type: "checkbox",
